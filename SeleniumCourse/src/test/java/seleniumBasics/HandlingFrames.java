@@ -24,7 +24,7 @@ public void verifyFrames()
 	// WebElement iframe=driver.findElement(By.xpath("//iframe[@id='frame1']"));
 	//driver.switchTo().frame(iframe);
 	WebElement heading=driver.findElement(By.xpath("//h1[@id='sampleHeading']"));
-    System.out.println(heading.getText());
+    System.out.println(heading.getText());//it may be a bug
 	
 }
 

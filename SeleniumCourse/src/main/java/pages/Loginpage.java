@@ -16,11 +16,21 @@ public class Loginpage {
 	}
 	
 	@FindBy(xpath="//input[@id=\"user-name\"]")private WebElement usernamefield;
+	@FindBy(xpath="//input[@id=\"password\"]")private WebElement passwordfield;
+	@FindBy(xpath="//input[@id=\"login-button\"]")private WebElement loginButton;
 	
 	public void enterUserNameonUserNameField()
 	{
 		usernamefield.sendKeys("standard_user");
 	}
 	
-
+	public void enterPasswordOnPasswordField()
+	{
+		passwordfield.sendKeys("secret_sauce");
+	}
+	
+	public void clickOnLoginButton()
+	{
+		loginButton.click();
+	}
 }

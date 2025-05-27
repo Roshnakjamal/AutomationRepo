@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
+import pages.Loginpage;
 import seleniumBasics.TestNgBase;
 
 public class Logintest extends TestNgBase{
@@ -13,10 +14,14 @@ public class Logintest extends TestNgBase{
 	{
 		//WebElement usernamefield=driver.findElement(By.xpath("//input[@id=\"user-name\"]"));
 		//usernamefield.sendKeys("standard_user");
-		WebElement passwordfield=driver.findElement(By.xpath("//input[@id=\"password\"]"));
-		passwordfield.sendKeys("secret_sauce");
-		WebElement loginButton=driver.findElement(By.xpath("//input[@id=\"login-button\"]"));
-		loginButton.click();
+		//WebElement passwordfield=driver.findElement(By.xpath("//input[@id=\"password\"]"));
+		//passwordfield.sendKeys("secret_sauce");
+		//WebElement loginButton=driver.findElement(By.xpath("//input[@id=\"login-button\"]"));
+		//loginButton.click();
+		Loginpage loginpage=new Loginpage(driver);
+		loginpage.enterUserNameonUserNameField();
+		loginpage.enterPasswordOnPasswordField();
+		loginpage.clickOnLoginButton();
 	}
 
 	@Test

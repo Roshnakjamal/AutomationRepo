@@ -15,7 +15,7 @@ public class HandlingFileUpload extends Base {
 	{
 		driver.navigate().to("https://demo.guru99.com/test/upload/");
 	WebElement choosefile=driver.findElement(By.xpath("//input[@id=\"uploadfile_0\"]"));
-	choosefile.sendKeys("C:\\Users\\hp\\git\\AutoRepo\\AutomationRepo\\SeleniumCourse\\src\\main\\resources\\1.pdf");
+	choosefile.sendKeys("C:\\Users\\hp\\git\\AutoRepo\\AutomationRepo\\SeleniumCourse\\src\\test\\resources\\1.pdf");
 	WebElement checkbox=driver.findElement(By.id("terms"));
 	checkbox.click();
 	WebElement submit=driver.findElement(By.id("submitbutton"));
@@ -26,7 +26,7 @@ public class HandlingFileUpload extends Base {
 		driver.navigate().to("https://www.ilovepdf.com/pdf_to_word");
 	WebElement uploads=driver.findElement(By.xpath("//a[@id='pickfiles']"));
 	uploads.click();
-StringSelection selection =new StringSelection("C:\\Users\\hp\\git\\AutoRepo\\AutomationRepo\\SeleniumCourse\\src\\main\\resources\\1.pdf");
+StringSelection selection =new StringSelection("C:\\Users\\hp\\git\\AutoRepo\\AutomationRepo\\SeleniumCourse\\src\\test\\resources\\1.pdf");
 	Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection, null);
 	Robot robot=new Robot();
 	robot.delay(2500);

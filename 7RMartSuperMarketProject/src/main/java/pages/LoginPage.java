@@ -5,19 +5,19 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Loginpage {
+public class LoginPage {
+
+public WebDriver driver;
 	
-	public WebDriver driver;
-	
-	public Loginpage(WebDriver driver)
+	public LoginPage(WebDriver driver)//constructor initialize
 	{
 		this.driver=driver;
 		PageFactory.initElements(driver,this);
 	}
 	
-	@FindBy(xpath="//input[@id=\"user-name\"]")private WebElement usernamefield;
-	@FindBy(xpath="//input[@id=\"password\"]")private WebElement passwordfield;
-	@FindBy(xpath="//input[@id=\"login-button\"]")private WebElement loginButton;
+	@FindBy(xpath="//input[@name=\"username\"]")private WebElement usernamefield;
+	@FindBy(xpath="//input[@name=\"password\"]")private WebElement passwordfield;
+	@FindBy(xpath="//button[@type=\"submit\"]")private WebElement submitButton;
 	
 	public void enterUserNameonUserNameField(String username)
 	{
@@ -29,8 +29,9 @@ public class Loginpage {
 		passwordfield.sendKeys(password);
 	}
 	
-	public void clickOnLoginButton()
+	public void clickOnSubmitButton()
 	{
-		loginButton.click();
+		submitButton.click();
 	}
+	
 }

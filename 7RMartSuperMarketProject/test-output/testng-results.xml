@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-05-30T12:24:18 IST" name="Default suite" finished-at="2025-05-30T12:24:27 IST" duration-ms="9382">
+    <groups>
+    </groups>
+    <test started-at="2025-05-30T12:24:18 IST" name="Default test" finished-at="2025-05-30T12:24:27 IST" duration-ms="9382">
+      <class name="testScript.AdminUsersTest">
+        <test-method is-config="true" signature="initializeBrowser()[pri:0, instance:testScript.AdminUsersTest@4c371370]" started-at="2025-05-30T12:24:18 IST" name="initializeBrowser" finished-at="2025-05-30T12:24:20 IST" duration-ms="1977" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeBrowser -->
+        <test-method signature="verifyWhethertheUsercanaddNewAdminuser()[pri:0, instance:testScript.AdminUsersTest@4c371370]" started-at="2025-05-30T12:24:20 IST" name="verifyWhethertheUsercanaddNewAdminuser" finished-at="2025-05-30T12:24:22 IST" duration-ms="1701" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyWhethertheUsercanaddNewAdminuser -->
+        <test-method is-config="true" signature="browserCloseandQuit()[pri:0, instance:testScript.AdminUsersTest@4c371370]" started-at="2025-05-30T12:24:22 IST" name="browserCloseandQuit" finished-at="2025-05-30T12:24:22 IST" duration-ms="191" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserCloseandQuit -->
+        <test-method is-config="true" signature="initializeBrowser()[pri:0, instance:testScript.AdminUsersTest@4c371370]" started-at="2025-05-30T12:24:22 IST" name="initializeBrowser" finished-at="2025-05-30T12:24:23 IST" duration-ms="1549" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeBrowser -->
+        <test-method signature="verifyWhethertheUsercannavigatetoAdminuserspage()[pri:0, instance:testScript.AdminUsersTest@4c371370]" started-at="2025-05-30T12:24:23 IST" name="verifyWhethertheUsercannavigatetoAdminuserspage" finished-at="2025-05-30T12:24:24 IST" duration-ms="685" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyWhethertheUsercannavigatetoAdminuserspage -->
+        <test-method is-config="true" signature="browserCloseandQuit()[pri:0, instance:testScript.AdminUsersTest@4c371370]" started-at="2025-05-30T12:24:24 IST" name="browserCloseandQuit" finished-at="2025-05-30T12:24:24 IST" duration-ms="199" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserCloseandQuit -->
+        <test-method is-config="true" signature="initializeBrowser()[pri:0, instance:testScript.AdminUsersTest@4c371370]" started-at="2025-05-30T12:24:24 IST" name="initializeBrowser" finished-at="2025-05-30T12:24:26 IST" duration-ms="1493" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- initializeBrowser -->
+        <test-method signature="verifywhetherUsercanSearchthenewlyaddedUser()[pri:0, instance:testScript.AdminUsersTest@4c371370]" started-at="2025-05-30T12:24:26 IST" name="verifywhetherUsercanSearchthenewlyaddedUser" finished-at="2025-05-30T12:24:27 IST" duration-ms="1350" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifywhetherUsercanSearchthenewlyaddedUser -->
+        <test-method is-config="true" signature="browserCloseandQuit()[pri:0, instance:testScript.AdminUsersTest@4c371370]" started-at="2025-05-30T12:24:27 IST" name="browserCloseandQuit" finished-at="2025-05-30T12:24:27 IST" duration-ms="195" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserCloseandQuit -->
+      </class> <!-- testScript.AdminUsersTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

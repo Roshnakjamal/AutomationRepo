@@ -30,7 +30,7 @@ public class ManageCategoryPage {
 	@FindBy(xpath = "//input[@id=\"category\"and@class=\"form-control\"]")
 	WebElement newcategoryfield;
 	@FindBy(xpath = "//li[@id=\"134-selectable\"]")
-	WebElement selectgroupsdraggable;
+	WebElement selectingfromgroups;
 	// @FindBy(xpath="//li[@class=\"ms-elem-selection\"]")WebElement
 	// selectgroupsdroppable;
 	@FindBy(xpath = "//input[@name=\"main_img\"]")
@@ -62,12 +62,12 @@ public class ManageCategoryPage {
 		newcategoryfield.sendKeys(newcategoryname);
 	}
 
-	public void clickOnDraggableItemOnSelectgroupsandDropIt() {
+	public void clickOnSelectGroupstoSelectGroup() {
 		// Actions actions=new Actions(driver);
 
 		// actions.dragAndDrop(selectgroupsdraggable,
 		// selectgroupsdroppable).build().perform();
-		selectgroupsdraggable.click();
+		selectingfromgroups.click();
 	}
 
 	public void clickOnTheFileUploadLink() throws AWTException {

@@ -37,7 +37,7 @@ public class ManageCategoryTest extends Base {
 		managecategorypage.clickOnNewCategoryAddIcon();
 		String newcategoryname = ExcelUtility.getStringData(0, 0, "ManageCategoryPage");
 		managecategorypage.enterNewnameOnCategoryField(newcategoryname);
-		managecategorypage.clickOnDraggableItemOnSelectgroupsandDropIt();
+		managecategorypage.clickOnSelectGroupstoSelectGroup();
 		managecategorypage.clickOnTheFileUploadLink();
 		managecategorypage.clickOnTheShowOnTopMenuAndShowOnLeftMenuRadioButton();
 		managecategorypage.clickonTheNewCategorySaveButton();

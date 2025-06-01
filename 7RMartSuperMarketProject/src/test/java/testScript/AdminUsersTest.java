@@ -34,10 +34,10 @@ public class AdminUsersTest extends Base {
 		AdminUsersPage adminuserspage = new AdminUsersPage(driver);
 		adminuserspage.clickonAdminusersicon();
 		adminuserspage.clickonnewAdminusersicononAdminuserspage();
-		String newAdminusername = ExcelUtility.getStringData(0, 0, "AdminUsersPage");
-		String NewAdminuserspassword = ExcelUtility.getStringData(0, 1, "AdminUsersPage");
-		adminuserspage.enterUserNameonAdminUsersUserNameField(newAdminusername);
-		adminuserspage.enterPasswordOnAdminUsersPasswordField(NewAdminuserspassword);
+		String newadminusername = ExcelUtility.getStringData(0, 0, "AdminUsersPage");
+		String newadminuserspassword = ExcelUtility.getStringData(0, 1, "AdminUsersPage");
+		adminuserspage.enterUserNameonAdminUsersUserNameField(newadminusername);
+		adminuserspage.enterPasswordOnAdminUsersPasswordField(newadminuserspassword);
 		adminuserspage.selectTheUserType();
 		adminuserspage.clickOnSaveButton();
 	}
@@ -55,8 +55,8 @@ public class AdminUsersTest extends Base {
 		adminuserspage.clickonAdminusersicon();
 		adminuserspage.clickonnewAdminusersicononAdminuserspage();
 		adminuserspage.clickonAdminUsersSearchIcon();
-		String newAdminusernamesearch = ExcelUtility.getStringData(0, 0, "AdminUsersPage");
-		adminuserspage.enterUserNameonadminUsersSearchUserNameField(newAdminusernamesearch);
+		String newadminusernamesearch = ExcelUtility.getStringData(0, 0, "AdminUsersPage");
+		adminuserspage.enterUserNameonadminUsersSearchUserNameField(newadminusernamesearch);
 		adminuserspage.enterUserNameonadminUsersSearchUsertype();
 		adminuserspage.clickonAdminUsersSearchButton();
 		adminuserspage.clickonAdminUsersResetLink();

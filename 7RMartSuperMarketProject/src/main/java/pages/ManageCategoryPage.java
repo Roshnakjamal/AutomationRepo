@@ -31,15 +31,13 @@ public class ManageCategoryPage {
 	WebElement newcategoryfield;
 	@FindBy(xpath = "//li[@id=\"134-selectable\"]")
 	WebElement selectingfromgroups;
-	// @FindBy(xpath="//li[@class=\"ms-elem-selection\"]")WebElement
-	// selectgroupsdroppable;
 	@FindBy(xpath = "//input[@name=\"main_img\"]")
 	WebElement newcategoryfileuploadlink;
-	@FindBy(xpath = "//input[@name=\"top_menu\"and@value=\"yes\"]")
+	@FindBy(xpath = "//input[@name='top_menu'and@value='yes']")
 	WebElement showontopmenuradiobutton;
-	@FindBy(xpath = "//input[@name=\"show_home\"and@value=\"yes\"] ")
+	@FindBy(xpath = "//input[@name='show_home'and@value='yes']")
 	WebElement showonleftmenuradiobutton;
-	@FindBy(xpath = "//button[@type=\"submit\"and@class=\"btn btn-danger\"]")
+	@FindBy(xpath = "//button[@type=\"submit\"]")
 	WebElement newcategorysavebutton;
 	@FindBy(xpath = "//a[@onclick=\"click_button(2)\"]")
 	WebElement categorysearchlink;
@@ -63,31 +61,12 @@ public class ManageCategoryPage {
 	}
 
 	public void clickOnSelectGroupstoSelectGroup() {
-		// Actions actions=new Actions(driver);
-
-		// actions.dragAndDrop(selectgroupsdraggable,
-		// selectgroupsdroppable).build().perform();
 		selectingfromgroups.click();
 	}
 
 	public void clickOnTheFileUploadLink() throws AWTException {
-
-		// newcategoryfileuploadlink.click();
-		newcategoryfileuploadlink.sendKeys("C:\\Users\\hp\\git\\AutoRepo\\AutomationRepo\\7RMartSuperMarketProject\\src\\test\\resources\\TestImage.jpg");
-		// StringSelection selection = new
-		// StringSelection("C:\\Users\\hp\\git\\AutoRepo\\AutomationRepo\\7RMartSuperMarketProject\\src\\test\\resources\\TestImage.jpg");
-		// Toolkit.getDefaultToolkit().getSystemClipboard().setContents(selection,
-		// null);
-		Robot robot = new Robot();
-		robot.delay(2500);
-		robot.keyPress(KeyEvent.VK_ENTER);
-		robot.keyRelease(KeyEvent.VK_ENTER);
-		robot.keyPress(KeyEvent.VK_CONTROL);
-		robot.keyPress(KeyEvent.VK_V);
-		robot.keyRelease(KeyEvent.VK_CONTROL);
-		robot.keyRelease(KeyEvent.VK_V);
-		robot.keyPress(KeyEvent.VK_ENTER);
-		robot.keyRelease(KeyEvent.VK_ENTER);
+		newcategoryfileuploadlink.sendKeys(
+				"C:\\Users\\hp\\git\\AutoRepo\\AutomationRepo\\7RMartSuperMarketProject\\src\\test\\resources\\TestImage.jpg");
 	}
 
 	public void clickOnTheShowOnTopMenuAndShowOnLeftMenuRadioButton() {

@@ -6,7 +6,7 @@
       <class name="testScript.ManageCategoryTest">
         <methods>
           <include name="initializeBrowser"/>
-          <include name="verifywhetherUsercanSearchTheCategoryDetails"/>
+          <include name="verifyWhetherTheUserCanEnterTheNewCategoryDetails"/>
           <include name="browserCloseandQuit"/>
         </methods>
       </class> <!-- testScript.ManageCategoryTest -->

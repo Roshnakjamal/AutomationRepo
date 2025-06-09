@@ -8,6 +8,8 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
+import constants.Constant;
+
 public class ExcelUtility {
 
 	static FileInputStream f;// to access the file from a given path
@@ -15,8 +17,7 @@ public class ExcelUtility {
 	static XSSFSheet sh;// to access the particular sheet from the workbook
 
 	public static String getStringData(int a, int b, String sheet) throws IOException {
-		f = new FileInputStream(
-				"C:\\Users\\hp\\git\\AutoRepo\\AutomationRepo\\7RMartSuperMarketProject\\src\\test\\resources\\TestData.xlsx");
+		f = new FileInputStream(Constant.TESTDATAFILE);
 		w = new XSSFWorkbook(f);
 		sh = w.getSheet(sheet);
 		XSSFRow r = sh.getRow(a);// xssfrow class to do modification in row
@@ -25,8 +26,7 @@ public class ExcelUtility {
 	}
 
 	public static String getTntegerData(int a, int b, String sheet) throws IOException {
-		f = new FileInputStream(
-				"C:\\Users\\hp\\git\\AutoRepo\\AutomationRepo\\7RMartSuperMarketProject\\src\\test\\resources\\TestData.xlsx");
+		f = new FileInputStream(Constant.TESTDATAFILE);
 		w = new XSSFWorkbook(f);
 		sh = w.getSheet(sheet);
 		XSSFRow r = sh.getRow(a);

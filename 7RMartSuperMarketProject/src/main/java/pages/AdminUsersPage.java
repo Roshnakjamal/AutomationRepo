@@ -15,70 +15,70 @@ public class AdminUsersPage {
 		this.driver = driver;
 		PageFactory.initElements(driver, this);
 	}
-	
-	@FindBy(xpath="//i[@class=\"fas fa-arrow-circle-right\"]")private WebElement adminuserslink;
-	@FindBy(xpath="//a[@onclick=\"click_button(1)\"]")private WebElement newadminuserlink;
-	@FindBy(xpath="//input[@id=\"username\"]")private WebElement adminusersnamefield;
-	@FindBy(xpath="//input[@id=\"password\"]")private WebElement adminuserspasswordfield;
-	@FindBy(xpath="//select[@id=\"user_type\"]")private WebElement usertypefield;
-	@FindBy(xpath="//button[@name=\"Create\"]")private WebElement adminuserssave;
-	@FindBy(xpath="//a[@onclick=\"click_button(2)\"]")private WebElement adminuserssearch;
-	@FindBy(xpath="//input[@id=\"un\"and@class=\"form-control\"]")private WebElement adminuserssearchusernamefield;
-	@FindBy(xpath="//select[@id=\"ut\"]")private WebElement adminuserssearchusertype;
-	@FindBy(xpath="//button[@class='btn btn-block-sm btn-danger'and@value='sr']")private WebElement adminuserssearchbutton;
-	@FindBy(xpath="//a[@class=\"btn btn-rounded btn-warning\"]")private WebElement adminusersresetlink;
+
+	@FindBy(xpath = "//i[@class=\"fas fa-arrow-circle-right\"]")
+	private WebElement adminuserslink;
+	@FindBy(xpath = "//a[@onclick=\"click_button(1)\"]")
+	private WebElement newadminuserlink;
+	@FindBy(xpath = "//input[@id=\"username\"]")
+	private WebElement adminusersnamefield;
+	@FindBy(xpath = "//input[@id=\"password\"]")
+	private WebElement adminuserspasswordfield;
+	@FindBy(xpath = "//select[@id=\"user_type\"]")
+	private WebElement usertypefield;
+	@FindBy(xpath = "//button[@name=\"Create\"]")
+	private WebElement adminuserssave;
+	@FindBy(xpath = "//a[@onclick=\"click_button(2)\"]")
+	private WebElement adminuserssearch;
+	@FindBy(xpath = "//input[@id=\"un\"and@class=\"form-control\"]")
+	private WebElement adminuserssearchusernamefield;
+	@FindBy(xpath = "//select[@id=\"ut\"]")
+	private WebElement adminuserssearchusertype;
+	@FindBy(xpath = "//button[@class='btn btn-block-sm btn-danger'and@value='sr']")
+	private WebElement adminuserssearchbutton;
 
 	public void clickonAdminusersicon() {
 		adminuserslink.click();
 	}
-	
+
 	public void clickonnewAdminusersicononAdminuserspage() {
 		newadminuserlink.click();
-		
+
 	}
-	
-	public void enterUserNameonAdminUsersUserNameField(String newAdminusername)
-	{
+
+	public void enterUserNameonAdminUsersUserNameField(String newAdminusername) {
 		adminusersnamefield.sendKeys(newAdminusername);
 	}
-	
-	public void enterPasswordOnAdminUsersPasswordField(String NewAdminuserspassword)
-	{
+
+	public void enterPasswordOnAdminUsersPasswordField(String NewAdminuserspassword) {
 		adminuserspasswordfield.sendKeys(NewAdminuserspassword);
 	}
-	
+
 	public void selectTheUserType() {
-		Select select=new Select(usertypefield);
+		Select select = new Select(usertypefield);
 		select.selectByIndex(2);
 	}
-	
-	public void clickOnSaveButton()
-	{
+
+	public void clickOnSaveButton() {
 		adminuserssave.click();
 	}
-	
-	public void clickonAdminUsersSearchIcon()
-	{
+
+	public void clickonAdminUsersSearchIcon() {
 		adminuserssearch.click();
 	}
-	
-	public void enterUserNameonadminUsersSearchUserNameField(String newAdminusername)
-	{
+
+	public void enterUserNameonadminUsersSearchUserNameField(String newAdminusername) {
 		adminuserssearchusernamefield.sendKeys(newAdminusername);
 	}
-	public void enterUserNameonadminUsersSearchUsertype()
-	{
-		Select select=new Select(adminuserssearchusertype);
+
+	public void enterUserNameonadminUsersSearchUsertype() {
+		Select select = new Select(adminuserssearchusertype);
 		select.selectByIndex(1);
-		
+
 	}
-	public void clickonAdminUsersSearchButton()
-	{
+
+	public void clickonAdminUsersSearchButton() {
 		adminuserssearchbutton.click();
-	}	
-	
-	public void clickonAdminUsersResetLink()
-	{
-		adminusersresetlink.click();
 	}
+
 }

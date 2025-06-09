@@ -5,13 +5,19 @@ import java.awt.Robot;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import constants.Constant;
 
 public class ManageCategoryPage {
 
@@ -33,10 +39,10 @@ public class ManageCategoryPage {
 	WebElement selectingfromgroups;
 	@FindBy(xpath = "//input[@name=\"main_img\"]")
 	WebElement newcategoryfileuploadlink;
-	@FindBy(xpath = "//input[@name='top_menu'and@value='yes']")
-	WebElement showontopmenuradiobutton;
-	@FindBy(xpath = "//input[@name='show_home'and@value='yes']")
-	WebElement showonleftmenuradiobutton;
+	@FindBy(xpath = "//input[@name='top_menu'and@value='no']")
+	private WebElement showontopmenuradiobutton;
+	@FindBy(xpath = "//input[@name='show_home'and@value='no'] ")
+	private WebElement showonleftmenuradiobutton;
 	@FindBy(xpath = "//button[@type=\"submit\"]")
 	WebElement newcategorysavebutton;
 	@FindBy(xpath = "//a[@onclick=\"click_button(2)\"]")
@@ -45,8 +51,6 @@ public class ManageCategoryPage {
 	WebElement categorynamesearchfield;
 	@FindBy(xpath = "//button[@value=\"sr\"]")
 	WebElement categorysearchbutton;
-	@FindBy(xpath = "//a[@class=\"btn btn-rounded btn-warning\"]")
-	WebElement categryresetlink;
 
 	public void clickOnManageCategoryLink() {
 		managecategorylink.click();
@@ -64,18 +68,25 @@ public class ManageCategoryPage {
 		selectingfromgroups.click();
 	}
 
-	public void clickOnTheFileUploadLink() throws AWTException {
-		newcategoryfileuploadlink.sendKeys(
-				"C:\\Users\\hp\\git\\AutoRepo\\AutomationRepo\\7RMartSuperMarketProject\\src\\test\\resources\\TestImage.jpg");
+	public void clickOnTheFileUploadLink() {
+		newcategoryfileuploadlink.sendKeys(Constant.TESTDATAIMAGE);
 	}
 
 	public void clickOnTheShowOnTopMenuAndShowOnLeftMenuRadioButton() {
-		showontopmenuradiobutton.click();
-		showonleftmenuradiobutton.click();
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", showontopmenuradiobutton);
+		js.executeScript("arguments[0].click();", showontopmenuradiobutton);
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", showonleftmenuradiobutton);
+		js.executeScript("arguments[0].click();", showonleftmenuradiobutton);
+
 	}
 
 	public void clickonTheNewCategorySaveButton() {
-		newcategorysavebutton.click();
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", newcategorysavebutton);
+		js.executeScript("arguments[0].click();", newcategorysavebutton);
 	}
 
 	public void clickonCategorySearchIcon() {
@@ -90,7 +101,4 @@ public class ManageCategoryPage {
 		categorysearchbutton.click();
 	}
 
-	public void categryResetLink() {
-		categryresetlink.click();
-	}
 }

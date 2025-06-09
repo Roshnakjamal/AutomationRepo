@@ -12,19 +12,7 @@ import utilities.ExcelUtility;
 
 public class ManageCategoryTest extends Base {
 
-	@Test
-	public void verifyWhethertheUserCanNavigatetoManageCategoryPage() throws IOException {
-		String username = ExcelUtility.getStringData(0, 0, "LoginPage");
-		String password = ExcelUtility.getStringData(0, 1, "LoginPage");
-		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUserNameonUserNameField(username);
-		loginpage.enterPasswordOnPasswordField(password);
-		loginpage.clickOnSubmitButton();
-		ManageCategoryPage managecategorypage = new ManageCategoryPage(driver);
-		managecategorypage.clickOnManageCategoryLink();
-	}
-
-	@Test
+	@Test(description = "verifying user can successfully enter the new category details")
 	public void verifyWhetherTheUserCanEnterTheNewCategoryDetails() throws IOException, AWTException {
 		String username = ExcelUtility.getStringData(0, 0, "LoginPage");
 		String password = ExcelUtility.getStringData(0, 1, "LoginPage");
@@ -43,7 +31,7 @@ public class ManageCategoryTest extends Base {
 		managecategorypage.clickonTheNewCategorySaveButton();
 	}
 
-	@Test
+	@Test(description = "verifying user can successfully search the category details")
 	public void verifywhetherUsercanSearchTheCategoryDetails() throws IOException {
 		String username = ExcelUtility.getStringData(0, 0, "LoginPage");
 		String password = ExcelUtility.getStringData(0, 1, "LoginPage");
@@ -57,7 +45,6 @@ public class ManageCategoryTest extends Base {
 		String newcategorysearchname = ExcelUtility.getStringData(0, 0, "ManageCategoryPage");
 		managecategorypage.enterCategoryNameOnCategorySearchField(newcategorysearchname);
 		managecategorypage.clickOnCategorySearchButton();
-		managecategorypage.categryResetLink();
 	}
 
 }

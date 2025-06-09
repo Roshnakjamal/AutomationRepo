@@ -6,8 +6,8 @@
       <class name="testScript.ManageCategoryTest">
         <methods>
           <include name="initializeBrowser"/>
-          <include name="verifyWhetherTheUserCanEnterTheNewCategoryDetails"/>
-          <include name="browserCloseandQuit"/>
+          <include name="driverQuit"/>
+          <include name="verifywhetherUsercanSearchTheCategoryDetails"/>
         </methods>
       </class> <!-- testScript.ManageCategoryTest -->
     </classes>

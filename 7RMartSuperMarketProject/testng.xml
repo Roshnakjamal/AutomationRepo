@@ -5,9 +5,16 @@
 		<listener class-name="listeners.Listener" />
 	</listeners>
 	<test thread-count="5" name="Test">
-
 		<classes>
-			<class name="testScript.LoginTest" />
+			<class name="testScript.LoginTest">
+				<methods>
+					<include name="verifyUserLoginWithValidCredentials"></include>
+					<include
+						name="verifyUserLoginWithValidUserNameandInValidpassword"></include>
+					<exclude
+						name="VerifyUserLoginWithInValidUserNameandValidpassword"></exclude>
+				</methods>
+			</class>
 		</classes>
 	</test> <!--
 	Test -->

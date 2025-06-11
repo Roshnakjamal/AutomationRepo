@@ -36,6 +36,10 @@ public class AdminUsersPage {
 	private WebElement adminuserssearchusertype;
 	@FindBy(xpath = "//button[@class='btn btn-block-sm btn-danger'and@value='sr']")
 	private WebElement adminuserssearchbutton;
+	@FindBy(xpath = "//div[@class=\"alert alert-success alert-dismissible\"]")
+	private WebElement usercreatedalertmessage;
+	@FindBy(xpath = "//h1[text()=\"Admin Users\"]")
+	private WebElement usersearchpagetitle;
 
 	public void clickonAdminusersicon() {
 		adminuserslink.click();
@@ -79,6 +83,14 @@ public class AdminUsersPage {
 
 	public void clickonAdminUsersSearchButton() {
 		adminuserssearchbutton.click();
+	}
+
+	public boolean userCreatedAlertMessageDisplayed() {
+		return usercreatedalertmessage.isDisplayed();
+	}
+
+	public boolean searchPageTitileDisplayed() {
+		return usersearchpagetitle.isDisplayed();
 	}
 
 }

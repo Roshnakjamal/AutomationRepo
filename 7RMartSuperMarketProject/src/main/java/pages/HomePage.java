@@ -19,6 +19,8 @@ public class HomePage {
 	private WebElement adminlink;
 	@FindBy(xpath = "//a[@href=\"https://groceryapp.uniqassosiates.com/admin/logout\"]")
 	private WebElement logoutlink;
+	@FindBy(xpath = "//p[@class=\"login-box-msg\"]")
+	private WebElement loginpagemessage;
 
 	public void clickonAdminicon() {
 		adminlink.click();
@@ -26,5 +28,9 @@ public class HomePage {
 
 	public void clickonLogoutIcon() {
 		logoutlink.click();
+	}
+
+	public boolean loginPageTitleboxDisplayed() {
+		return loginpagemessage.isDisplayed();
 	}
 }

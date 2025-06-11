@@ -51,6 +51,10 @@ public class ManageCategoryPage {
 	WebElement categorynamesearchfield;
 	@FindBy(xpath = "//button[@value=\"sr\"]")
 	WebElement categorysearchbutton;
+	@FindBy(xpath = "//div[@class=\"alert alert-success alert-dismissible\"]")
+	private WebElement categorycreatedalert;
+	@FindBy(xpath = "//h1[text()=\"List Categories\"]")
+	private WebElement categorysearchpagetitle;
 
 	public void clickOnManageCategoryLink() {
 		managecategorylink.click();
@@ -99,6 +103,14 @@ public class ManageCategoryPage {
 
 	public void clickOnCategorySearchButton() {
 		categorysearchbutton.click();
+	}
+
+	public boolean categorycreatedalertmessagedisplayed() {
+		return categorycreatedalert.isDisplayed();
+	}
+
+	public boolean categorysearchpagetitledisplayed() {
+		return categorysearchpagetitle.isDisplayed();
 	}
 
 }

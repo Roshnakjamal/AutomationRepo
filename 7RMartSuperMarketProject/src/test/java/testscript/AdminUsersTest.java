@@ -1,4 +1,4 @@
-package testScript;
+package testscript;
 
 import java.io.IOException;
 
@@ -14,7 +14,7 @@ import utilities.FakerUtility;
 
 public class AdminUsersTest extends Base {
 
-	@Test(description = "Verifying user can add new admin user")
+	@Test(description = "Verifying user can add new admin user",retryAnalyzer=retry.Retry.class)//retry mechanism
 	public void verifyWhethertheUsercanaddNewAdminuser() throws IOException {
 		String username = ExcelUtility.getStringData(0, 0, "LoginPage");
 		String password = ExcelUtility.getStringData(0, 1, "LoginPage");

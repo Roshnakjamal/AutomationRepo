@@ -51,9 +51,9 @@ public class ManageCategoryPage {
 	WebElement categorynamesearchfield;
 	@FindBy(xpath = "//button[@value=\"sr\"]")
 	WebElement categorysearchbutton;
-	@FindBy(xpath = "//div[@class=\"alert alert-success alert-dismissible\"]")
+	@FindBy(xpath = "//div[@class=\"alert alert-danger alert-dismissible\"]")
 	private WebElement categorycreatedalert;
-	@FindBy(xpath = "//h1[text()=\"List Categories\"]")
+	@FindBy(xpath = "//h1[text()= \"List Categories\"]")
 	private WebElement categorysearchpagetitle;
 
 	public void clickOnManageCategoryLink() {
@@ -77,6 +77,9 @@ public class ManageCategoryPage {
 	}
 
 	public void clickOnTheShowOnTopMenuAndShowOnLeftMenuRadioButton() {
+		
+//		showontopmenuradiobutton.click();
+//		showonleftmenuradiobutton.click();
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", showontopmenuradiobutton);
@@ -91,6 +94,7 @@ public class ManageCategoryPage {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", newcategorysavebutton);
 		js.executeScript("arguments[0].click();", newcategorysavebutton);
+	//	newcategorysavebutton.click();
 	}
 
 	public void clickonCategorySearchIcon() {
@@ -104,7 +108,12 @@ public class ManageCategoryPage {
 	public void clickOnCategorySearchButton() {
 		categorysearchbutton.click();
 	}
-
+	
+//	public void pagescrolldown()
+//	{
+//		JavascriptExecutor js = (JavascriptExecutor)driver;
+//		js.executeScript("window.scrollBy(0,800)","");
+//	}
 	public boolean categorycreatedalertmessagedisplayed() {
 		return categorycreatedalert.isDisplayed();
 	}
@@ -112,5 +121,5 @@ public class ManageCategoryPage {
 	public boolean categorysearchpagetitledisplayed() {
 		return categorysearchpagetitle.isDisplayed();
 	}
-
+ 
 }

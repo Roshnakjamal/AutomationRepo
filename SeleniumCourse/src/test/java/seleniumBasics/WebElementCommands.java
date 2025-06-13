@@ -35,6 +35,8 @@ public class WebElementCommands extends Base{
 		Wait<WebDriver>fluent=new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(5)).pollingEvery(Duration.ofSeconds(2)).ignoring(NoSuchElementException.class);
 		fluent.until(ExpectedConditions.elementToBeClickable(showmessagebutton));
 		showmessagebutton.click();
+		//System.out.println(showmessagebutton.isDisplayed());
+		System.out.println(showmessagebutton.isEnabled());
 		WebElement yourmessage= driver.findElement(By.xpath("//div[@id=\"message-one\"]"));
 		System.out.println(yourmessage.getText());
 		messagebox.clear();

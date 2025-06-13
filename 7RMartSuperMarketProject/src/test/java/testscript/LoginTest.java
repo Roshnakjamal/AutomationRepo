@@ -1,4 +1,4 @@
-package testScript;
+package testscript;
 
 import java.io.IOException;
 
@@ -37,9 +37,9 @@ public class LoginTest extends Base {
 		loginpage.clickOnSubmitButton();
 		boolean isalertmessagedisplayed = loginpage.alertMessageDisplayed();
 		Assert.assertTrue(isalertmessagedisplayed, Messages.INVALIDCREDENTIALERROR);
-		// boolean isdashboardDisplayed=loginpage.dashboardTiledisplayed();
-		// Assert.assertFalse(isdashboardDisplayed,"User was able to login with invalid
-		// password");//put error message
+//		 boolean isdashboardDisplayed=loginpage.dashboardTileDisplayed();
+//		 Assert.assertFalse(isdashboardDisplayed,"User was able to login with invalid password");//put error message
+// If isdashboardDisplayed is actually false, the assertion passes, so the message will not appear. Assertion messages only appear on failure.
 	}
 
 	@Test(description = "Verifying user login with invalid username and valid password", priority = 3)

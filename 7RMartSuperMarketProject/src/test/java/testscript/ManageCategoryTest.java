@@ -28,13 +28,9 @@ public class ManageCategoryTest extends Base {
 		String newcategoryname = ExcelUtility.getStringData(0, 0, "ManageCategoryPage");
 		managecategorypage.enterNewnameOnCategoryField(newcategoryname);
 		managecategorypage.clickOnSelectGroupstoSelectGroup();
-
 		managecategorypage.clickOnTheFileUploadLink();
-		// managecategorypage.pagescrolldown();
 		managecategorypage.clickOnTheShowOnTopMenuAndShowOnLeftMenuRadioButton();
-		// managecategorypage.pagescrolldown();
 		managecategorypage.clickonTheNewCategorySaveButton();
-		// managecategorypage.pagescrolldown();
 		boolean iscategorycreatedalertdisplayed = managecategorypage.categorycreatedalertmessagedisplayed();
 		Assert.assertTrue(iscategorycreatedalertdisplayed, Messages.ADDNEWCATEGORYERROR);
 	}

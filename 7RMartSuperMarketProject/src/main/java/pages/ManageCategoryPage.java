@@ -18,6 +18,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import constants.Constant;
+import utilities.WaitUtility;
 
 public class ManageCategoryPage {
 
@@ -77,24 +78,20 @@ public class ManageCategoryPage {
 	}
 
 	public void clickOnTheShowOnTopMenuAndShowOnLeftMenuRadioButton() {
-		
-//		showontopmenuradiobutton.click();
-//		showonleftmenuradiobutton.click();
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", showontopmenuradiobutton);
-		js.executeScript("arguments[0].click();", showontopmenuradiobutton);
-		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", showonleftmenuradiobutton);
-		js.executeScript("arguments[0].click();", showonleftmenuradiobutton);
+		js.executeScript("arguments[0].scrollIntoView()", showontopmenuradiobutton);
+		js.executeScript("arguments[0].click()", showontopmenuradiobutton);
+		js.executeScript("arguments[0].scrollIntoView()", showonleftmenuradiobutton);
+		js.executeScript("arguments[0].click()", showonleftmenuradiobutton);
 
 	}
 
 	public void clickonTheNewCategorySaveButton() {
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView({block: 'center'});", newcategorysavebutton);
-		js.executeScript("arguments[0].click();", newcategorysavebutton);
-	//	newcategorysavebutton.click();
+		js.executeScript("arguments[0].scrollIntoView()", newcategorysavebutton);
+		js.executeScript("arguments[0].click()", newcategorysavebutton);
 	}
 
 	public void clickonCategorySearchIcon() {
@@ -108,12 +105,7 @@ public class ManageCategoryPage {
 	public void clickOnCategorySearchButton() {
 		categorysearchbutton.click();
 	}
-	
-//	public void pagescrolldown()
-//	{
-//		JavascriptExecutor js = (JavascriptExecutor)driver;
-//		js.executeScript("window.scrollBy(0,800)","");
-//	}
+
 	public boolean categorycreatedalertmessagedisplayed() {
 		return categorycreatedalert.isDisplayed();
 	}
@@ -121,5 +113,5 @@ public class ManageCategoryPage {
 	public boolean categorysearchpagetitledisplayed() {
 		return categorysearchpagetitle.isDisplayed();
 	}
- 
+
 }

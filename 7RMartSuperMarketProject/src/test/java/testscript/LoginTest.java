@@ -3,6 +3,7 @@ package testscript;
 import java.io.IOException;
 
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import automationCore.Base;
@@ -12,7 +13,7 @@ import utilities.ExcelUtility;
 
 public class LoginTest extends Base {
 
-	@Test(description = "Verifying successful user login with valid credentials", priority = 1)
+	@Test(description = "Verifying successful user login with valid credentials", priority = 1, groups = { "smoke" })
 	public void verifyUserLoginWithValidCredentials() throws IOException {
 		String username = ExcelUtility.getStringData(0, 0, "LoginPage");
 		String password = ExcelUtility.getStringData(0, 1, "LoginPage");
@@ -54,10 +55,12 @@ public class LoginTest extends Base {
 		Assert.assertTrue(isalertmessagedisplayed, Messages.INVALIDCREDENTIALERROR);
 	}
 
-	@Test(description = "Verifying user login with invalid username and invalid password", priority = 4)
-	public void verifyUserLoginWithInValidUserNameandInValidpassword() throws IOException {
-		String username = ExcelUtility.getStringData(3, 0, "LoginPage");
-		String password = ExcelUtility.getStringData(3, 1, "LoginPage");
+	@Test(description = "Verifying user login with invalid username and invalid password", priority = 4, groups = {
+			"smoke" }, dataProvider = "logindata")
+	public void verifyUserLoginWithInValidUserNameandInValidpassword(String username, String password)
+			throws IOException {
+//		String username = ExcelUtility.getStringData(3, 0, "LoginPage");
+//		String password = ExcelUtility.getStringData(3, 1, "LoginPage");
 		LoginPage loginpage = new LoginPage(driver);
 		loginpage.enterUserNameonUserNameField(username);
 		loginpage.enterPasswordOnPasswordField(password);
@@ -65,4 +68,12 @@ public class LoginTest extends Base {
 		boolean isalertmessagedisplayed = loginpage.alertMessageDisplayed();
 		Assert.assertTrue(isalertmessagedisplayed, Messages.INVALIDCREDENTIALERROR);
 	}
+
+	// Dataprovider usage in testcase
+	@DataProvider(name = "logindata")
+	public Object[][] getDataFromDataProvider() throws IOException {
+		return new Object[][] { new Object[] { "test", "test1" }, new Object[] { "test1", "test2" }, new Object[] {
+				ExcelUtility.getStringData(3, 0, "LoginPage"), ExcelUtility.getStringData(3, 1, "LoginPage") } };
+	}
+
 }

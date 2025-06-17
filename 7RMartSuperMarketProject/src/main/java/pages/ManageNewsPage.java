@@ -30,7 +30,7 @@ public class ManageNewsPage {
 	WebElement managenewssearchfield;
 	@FindBy(xpath = "//button[@type=\"submit\"]")
 	WebElement managenewssearchbutton;
-	@FindBy(xpath = "//a[@href=\"https://groceryapp.uniqassosiates.com/admin/list-news\"and@class=\"btn btn-rounded btn-warning\"]")
+	@FindBy(xpath = "//i[@class=\"ace-icon fa fa-sync-alt\"]")
 	WebElement manangenewsreseticon;
 	@FindBy(xpath = "//div[@class=\"alert alert-success alert-dismissible\"]")
 	private WebElement newnewscreatedalert;

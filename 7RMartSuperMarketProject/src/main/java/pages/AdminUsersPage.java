@@ -6,6 +6,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import utilities.PageUtility;
+import utilities.WaitUtility;
+
 public class AdminUsersPage {
 
 	public WebDriver driver;
@@ -59,11 +62,15 @@ public class AdminUsersPage {
 	}
 
 	public void selectTheUserType() {
-		Select select = new Select(usertypefield);
-		select.selectByIndex(2);
+		PageUtility selection = new PageUtility();
+		selection.selectDropdownWithIndex(usertypefield, 2);
+//		Select select = new Select(usertypefield);
+//		select.selectByIndex(2);
 	}
 
 	public void clickOnSaveButton() {
+		WaitUtility wait = new WaitUtility();
+		wait.waitUntilElementToBeClickable(driver, adminuserssave);
 		adminuserssave.click();
 	}
 
@@ -76,8 +83,10 @@ public class AdminUsersPage {
 	}
 
 	public void enterUserNameonadminUsersSearchUsertype() {
-		Select select = new Select(adminuserssearchusertype);
-		select.selectByIndex(1);
+		PageUtility selection = new PageUtility();
+		selection.selectDropdownWithIndex(adminuserssearchusertype, 1);
+//		Select select = new Select(adminuserssearchusertype);
+//		select.selectByIndex(1);
 
 	}
 

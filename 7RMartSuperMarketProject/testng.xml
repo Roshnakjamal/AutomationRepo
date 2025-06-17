@@ -3,21 +3,25 @@
 <suite name="Suite">
 	<parameter name="browser" value="Chrome"></parameter>
 	<listeners>
-		<listener class-name="listeners.Listener">
-		</listener>
+		<listener class-name="listeners.Listener"></listener>
 	</listeners>
 	<test thread-count="5" name="Test">
 		<classes>
 			<class name="testscript.LoginTest">
 				<methods>
-					<include name="verifyUserLoginWithValidCredentials"></include>
 					<include
-						name="verifyUserLoginWithValidUserNameandInValidpassword"></include>
-					<exclude
-						name="VerifyUserLoginWithInValidUserNameandValidpassword"></exclude>
+						name="verifyUserLoginWithInValidUserNameandInValidpassword"></include>
 				</methods>
 			</class>
 			<class name="testscript.ManageCategoryTest">
+			</class>
+			<class name="testscript.ManageNewsTest">
+			</class>
+			<class name="testscript.HomeTest">
+			</class>
+			<class name="testscript.AdminUsersTest">
+			</class>
+			<class name="testscript.LoginTest">
 			</class>
 		</classes>
 	</test> <!--

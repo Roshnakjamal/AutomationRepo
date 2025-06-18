@@ -25,17 +25,22 @@ public class LoginPage {
 	private WebElement dashboardtitle;
 	@FindBy(xpath = "//div[@class=\"alert alert-danger alert-dismissible\"]")
 	private WebElement alertmessage;
+	@FindBy(xpath = "//p[@class=\"login-box-msg\"]")
+	private WebElement loginpagemessage;
 
-	public void enterUserNameonUserNameField(String username) {
+	public LoginPage enterUserNameonUserNameField(String username) {
 		usernamefield.sendKeys(username);
+		return this;// same page
 	}
 
-	public void enterPasswordOnPasswordField(String password) {
+	public LoginPage enterPasswordOnPasswordField(String password) {
 		passwordfield.sendKeys(password);
+		return this;
 	}
 
-	public void clickOnSubmitButton() {
+	public HomePage clickOnSubmitButton() {
 		submitButton.click();
+		return new HomePage(driver);// driver control goes to home page
 	}
 
 	public boolean dashboardTileDisplayed() {
@@ -49,5 +54,9 @@ public class LoginPage {
 
 	public boolean alertMessageDisplayed() {
 		return alertmessage.isDisplayed();
+	}
+
+	public boolean loginPageTitleboxDisplayed() {
+		return loginpagemessage.isDisplayed();
 	}
 }

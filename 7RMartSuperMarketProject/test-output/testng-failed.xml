@@ -7,13 +7,13 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="testscript.ManageNewsTest">
+      <class name="testscript.AdminUsersTest">
         <methods>
-          <include name="verifywhetherUserCanSearchNews"/>
           <include name="initializeBrowser"/>
           <include name="driverQuit"/>
+          <include name="verifywhetherUsercanSearchthenewlyaddedUser"/>
         </methods>
-      </class> <!-- testscript.ManageNewsTest -->
+      </class> <!-- testscript.AdminUsersTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

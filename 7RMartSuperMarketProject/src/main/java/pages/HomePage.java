@@ -19,18 +19,36 @@ public class HomePage {
 	private WebElement adminlink;
 	@FindBy(xpath = "//a[@href=\"https://groceryapp.uniqassosiates.com/admin/logout\"]")
 	private WebElement logoutlink;
-	@FindBy(xpath = "//p[@class=\"login-box-msg\"]")
-	private WebElement loginpagemessage;
+	@FindBy(xpath = "//i[@class=\"fas fa-arrow-circle-right\"]")
+	private WebElement adminuserslink;
+	@FindBy(xpath = ("//a[@href=\"https://groceryapp.uniqassosiates.com/admin/list-news\"and@class=\"small-box-footer\"]"))
+	private WebElement manageNewslink;
+	@FindBy(xpath = "//a[@href=\"https://groceryapp.uniqassosiates.com/admin/list-category\"]")
+	WebElement managecategorylink;
 
-	public void clickonAdminicon() {
+	public HomePage clickonAdminicon() {
 		adminlink.click();
+		return this;
 	}
 
-	public void clickonLogoutIcon() {
+	public LoginPage clickonLogoutIcon() {
 		logoutlink.click();
+		return new LoginPage(driver);
 	}
 
-	public boolean loginPageTitleboxDisplayed() {
-		return loginpagemessage.isDisplayed();
+	public AdminUsersPage clickonAdminusersicon() {
+		adminuserslink.click();
+		return new AdminUsersPage(driver);
 	}
+
+	public ManageNewsPage clickOnManageNewsLink() {
+		manageNewslink.click();
+		return new ManageNewsPage(driver);
+	}
+
+	public ManageCategoryPage clickOnManageCategoryLink() {
+		managecategorylink.click();
+		return new ManageCategoryPage(driver);
+	}
+
 }

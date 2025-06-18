@@ -2,6 +2,7 @@ package utilities;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 public class PageUtility {
@@ -29,8 +30,21 @@ public class PageUtility {
 		object.deselectByIndex(index);
 	}
 
-	public void deselectDropdownWithValue(WebElement element, String value) {
-		Select object = new Select(element);
-		object.deselectByValue(value);
+	public void rightClickOnElement(WebElement element) {
+		Actions actions = new Actions(driver);
+		actions.contextClick(element).build().perform();
 	}
+
+	public void selectCheckbox(WebElement checkbox) {
+		if (!checkbox.isSelected()) {
+			checkbox.click();
+		}
+	}
+
+	public void selectRadioButton(WebElement radioButton) {
+		if (!radioButton.isSelected()) {
+			radioButton.click();
+		}
+	}
+
 }

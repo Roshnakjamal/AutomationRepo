@@ -30,8 +30,6 @@ public class ManageCategoryPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//a[@href=\"https://groceryapp.uniqassosiates.com/admin/list-category\"]")
-	WebElement managecategorylink;
 	@FindBy(xpath = "//a[@onclick=\"click_button(1)\"]")
 	WebElement newcategoryaddicon;
 	@FindBy(xpath = "//input[@id=\"category\"and@class=\"form-control\"]")
@@ -54,56 +52,61 @@ public class ManageCategoryPage {
 	WebElement categorysearchbutton;
 	@FindBy(xpath = "//div[@class=\"alert alert-danger alert-dismissible\"]")
 	private WebElement categorycreatedalert;
-	@FindBy(xpath = "//h1[text()= \"List Categories\"]")
+	@FindBy(xpath = "//h4[text()=\"Search List Categories\"]")
 	private WebElement categorysearchpagetitle;
 
-	public void clickOnManageCategoryLink() {
-		managecategorylink.click();
-	}
-
-	public void clickOnNewCategoryAddIcon() {
+	public ManageCategoryPage clickOnNewCategoryAddIcon() {
 		newcategoryaddicon.click();
+		return this;
 	}
 
-	public void enterNewnameOnCategoryField(String newcategoryname) {
+	public ManageCategoryPage enterNewnameOnCategoryField(String newcategoryname) {
 		newcategoryfield.sendKeys(newcategoryname);
+		return this;
 	}
 
-	public void clickOnSelectGroupstoSelectGroup() {
+	public ManageCategoryPage clickOnSelectGroupstoSelectGroup() {
 		selectingfromgroups.click();
+		return this;
 	}
 
-	public void clickOnTheFileUploadLink() {
+	public ManageCategoryPage clickOnTheFileUploadLink() {
 		newcategoryfileuploadlink.sendKeys(Constant.TESTDATAIMAGE);
+		return this;
 	}
 
-	public void clickOnTheShowOnTopMenuAndShowOnLeftMenuRadioButton() {
+	public ManageCategoryPage clickOnTheShowOnTopMenuAndShowOnLeftMenuRadioButton() {
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView()", showontopmenuradiobutton);
 		js.executeScript("arguments[0].click()", showontopmenuradiobutton);
 		js.executeScript("arguments[0].scrollIntoView()", showonleftmenuradiobutton);
 		js.executeScript("arguments[0].click()", showonleftmenuradiobutton);
+		return this;
 
 	}
 
-	public void clickonTheNewCategorySaveButton() {
+	public ManageCategoryPage clickonTheNewCategorySaveButton() {
 
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView()", newcategorysavebutton);
 		js.executeScript("arguments[0].click()", newcategorysavebutton);
+		return this;
 	}
 
-	public void clickonCategorySearchIcon() {
+	public ManageCategoryPage clickonCategorySearchIcon() {
 		categorysearchlink.click();
+		return this;
 	}
 
-	public void enterCategoryNameOnCategorySearchField(String categoryname) {
+	public ManageCategoryPage enterCategoryNameOnCategorySearchField(String categoryname) {
 		categorynamesearchfield.sendKeys(categoryname);
+		return this;
 	}
 
-	public void clickOnCategorySearchButton() {
+	public ManageCategoryPage clickOnCategorySearchButton() {
 		categorysearchbutton.click();
+		return this;
 	}
 
 	public boolean categorycreatedalertmessagedisplayed() {

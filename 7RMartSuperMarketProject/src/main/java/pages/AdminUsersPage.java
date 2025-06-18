@@ -19,8 +19,6 @@ public class AdminUsersPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//i[@class=\"fas fa-arrow-circle-right\"]")
-	private WebElement adminuserslink;
 	@FindBy(xpath = "//a[@onclick=\"click_button(1)\"]")
 	private WebElement newadminuserlink;
 	@FindBy(xpath = "//input[@id=\"username\"]")
@@ -44,54 +42,60 @@ public class AdminUsersPage {
 	@FindBy(xpath = "//h1[text()=\"Admin Users\"]")
 	private WebElement usersearchpagetitle;
 
-	public void clickonAdminusersicon() {
-		adminuserslink.click();
-	}
-
-	public void clickonnewAdminusersicononAdminuserspage() {
+	public AdminUsersPage clickonnewAdminusersicononAdminuserspage() {
 		newadminuserlink.click();
+		return this;
 
 	}
 
-	public void enterUserNameonAdminUsersUserNameField(String newAdminusername) {
+	public AdminUsersPage enterUserNameonAdminUsersUserNameField(String newAdminusername) {
 		adminusersnamefield.sendKeys(newAdminusername);
+		return this;
+
 	}
 
-	public void enterPasswordOnAdminUsersPasswordField(String NewAdminuserspassword) {
+	public AdminUsersPage enterPasswordOnAdminUsersPasswordField(String NewAdminuserspassword) {
 		adminuserspasswordfield.sendKeys(NewAdminuserspassword);
+		return this;
 	}
 
-	public void selectTheUserType() {
+	public AdminUsersPage selectTheUserType() {
 		PageUtility selection = new PageUtility();
 		selection.selectDropdownWithIndex(usertypefield, 2);
 //		Select select = new Select(usertypefield);
 //		select.selectByIndex(2);
+		return this;
 	}
 
-	public void clickOnSaveButton() {
+	public AdminUsersPage clickOnSaveButton() {
 		WaitUtility wait = new WaitUtility();
 		wait.waitUntilElementToBeClickable(driver, adminuserssave);
 		adminuserssave.click();
+		return this;
 	}
 
-	public void clickonAdminUsersSearchIcon() {
+	public AdminUsersPage clickonAdminUsersSearchIcon() {
 		adminuserssearch.click();
+		return this;
 	}
 
-	public void enterUserNameonadminUsersSearchUserNameField(String newAdminusername) {
+	public AdminUsersPage enterUserNameonadminUsersSearchUserNameField(String newAdminusername) {
 		adminuserssearchusernamefield.sendKeys(newAdminusername);
+		return this;
 	}
 
-	public void enterUserNameonadminUsersSearchUsertype() {
+	public AdminUsersPage enterUserNameonadminUsersSearchUsertype() {
 		PageUtility selection = new PageUtility();
 		selection.selectDropdownWithIndex(adminuserssearchusertype, 1);
 //		Select select = new Select(adminuserssearchusertype);
 //		select.selectByIndex(1);
+		return this;
 
 	}
 
-	public void clickonAdminUsersSearchButton() {
+	public AdminUsersPage clickonAdminUsersSearchButton() {
 		adminuserssearchbutton.click();
+		return this;
 	}
 
 	public boolean userCreatedAlertMessageDisplayed() {

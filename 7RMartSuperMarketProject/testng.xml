@@ -8,20 +8,14 @@
 	<test thread-count="5" name="Test">
 		<classes>
 			<class name="testscript.LoginTest">
-				<methods>
-					<include
-						name="verifyUserLoginWithInValidUserNameandInValidpassword"></include>
-				</methods>
-			</class>
-			<class name="testscript.ManageCategoryTest">
-			</class>
-			<class name="testscript.ManageNewsTest">
 			</class>
 			<class name="testscript.HomeTest">
 			</class>
 			<class name="testscript.AdminUsersTest">
 			</class>
-			<class name="testscript.LoginTest">
+			<class name="testscript.ManageCategoryTest">
+			</class>
+			<class name="testscript.ManageNewsTest">
 			</class>
 		</classes>
 	</test> <!--

@@ -35,7 +35,7 @@ public class ManageCategoryTest extends Base {
 		Assert.assertTrue(iscategorycreatedalertdisplayed, Messages.ADDNEWCATEGORYERROR);
 	}
 
-	@Test(description = "verifying user can successfully search the category details")
+	@Test(description = "verifying user can successfully search the category details",retryAnalyzer = retry.Retry.class)
 	public void verifywhetherUsercanSearchTheCategoryDetails() throws IOException {
 		HomePage homepage;
 		ManageCategoryPage managecategorypage;

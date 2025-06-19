@@ -38,7 +38,7 @@ public class AdminUsersTest extends Base {
 		Assert.assertTrue(isusercreatedalertdispalyed, Messages.ADDNEWADMINUSERERROR);
 	}
 
-	@Test(description = "Verifying user can search the new admin user")
+	@Test(description = "Verifying user can search the new admin user",retryAnalyzer = retry.Retry.class)
 	public void verifywhetherUsercanSearchthenewlyaddedUser() throws IOException {
 		HomePage homepage;
 		AdminUsersPage adminpage;

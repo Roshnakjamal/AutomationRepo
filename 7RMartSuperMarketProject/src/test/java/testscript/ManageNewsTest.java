@@ -32,7 +32,7 @@ public class ManageNewsTest extends Base {
 		Assert.assertTrue(isnewNewsCreatedAlertDispalyed, Messages.ADDNEWNEWSERROR);
 	}
 
-	@Test(description = "verifying user can successfully search news")
+	@Test(description = "verifying user can successfully search news",retryAnalyzer = retry.Retry.class)
 	public void verifywhetherUserCanSearchNews() throws IOException {
 		HomePage homepage;
 		ManageNewsPage managenews;

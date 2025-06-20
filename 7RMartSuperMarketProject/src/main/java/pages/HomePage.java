@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.WaitUtility;
+
 public class HomePage {
 
 	public WebDriver driver;
@@ -21,7 +23,7 @@ public class HomePage {
 	private WebElement logoutlink;
 	@FindBy(xpath = "//i[@class=\"fas fa-arrow-circle-right\"]")
 	private WebElement adminuserslink;
-	@FindBy(xpath = ("//a[@href=\"https://groceryapp.uniqassosiates.com/admin/list-news\"and@class=\"small-box-footer\"]"))
+	@FindBy(xpath = ("//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news'and@class='small-box-footer']"))
 	private WebElement manageNewslink;
 	@FindBy(xpath = "//a[@href=\"https://groceryapp.uniqassosiates.com/admin/list-category\"]")
 	WebElement managecategorylink;
@@ -42,6 +44,8 @@ public class HomePage {
 	}
 
 	public ManageNewsPage clickOnManageNewsLink() {
+		WaitUtility wait = new WaitUtility();
+		wait.waitUntilElementToBeClickable(driver, manageNewslink);
 		manageNewslink.click();
 		return new ManageNewsPage(driver);
 	}

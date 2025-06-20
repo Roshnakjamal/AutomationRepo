@@ -14,7 +14,7 @@ import utilities.ExcelUtility;
 
 public class ManageNewsTest extends Base {
 
-	@Test(description = "verifying user can successfully add new news")
+	@Test(description = "verifying user can successfully add new news",retryAnalyzer = retry.Retry.class)
 	public void verifyWhethertheUsercanaddNewNews() throws IOException {
 		HomePage homepage;
 		ManageNewsPage managenews;

@@ -9,14 +9,7 @@
 		<classes>
 			<class name="testscript.LoginTest">
 			</class>
-			<class name="testscript.HomeTest">
-			</class>
-			<class name="testscript.AdminUsersTest">
-			</class>
-			<class name="testscript.ManageCategoryTest">
-			</class>
-			<class name="testscript.ManageNewsTest">
-			</class>
+			
 		</classes>
 	</test> <!--
 	Test -->

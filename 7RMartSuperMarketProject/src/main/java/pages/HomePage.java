@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.PageUtility;
 import utilities.WaitUtility;
 
 public class HomePage {
@@ -45,10 +46,8 @@ public class HomePage {
 	}
 
 	public ManageNewsPage clickOnManageNewsLink() {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView()", manageNewslink);
-		js.executeScript("arguments[0].click()", manageNewslink);
-		
+		PageUtility scrolltoview = new PageUtility();
+		scrolltoview.elementscrollintoview(manageNewslink);
 		return new ManageNewsPage(driver);
 	}
 

@@ -18,6 +18,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import constants.Constant;
+import utilities.PageUtility;
 import utilities.WaitUtility;
 
 public class ManageCategoryPage {
@@ -77,20 +78,20 @@ public class ManageCategoryPage {
 
 	public ManageCategoryPage clickOnTheShowOnTopMenuAndShowOnLeftMenuRadioButton() {
 
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView()", showontopmenuradiobutton);
-		js.executeScript("arguments[0].click()", showontopmenuradiobutton);
-		js.executeScript("arguments[0].scrollIntoView()", showonleftmenuradiobutton);
-		js.executeScript("arguments[0].click()", showonleftmenuradiobutton);
+	
+		PageUtility scrolltoview = new PageUtility();
+		scrolltoview.elementscrollintoview(showontopmenuradiobutton);
+		
+		showonleftmenuradiobutton.click();
+		
 		return this;
 
 	}
 
 	public ManageCategoryPage clickonTheNewCategorySaveButton() {
 
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollIntoView()", newcategorysavebutton);
-		js.executeScript("arguments[0].click()", newcategorysavebutton);
+		PageUtility scrolltoview = new PageUtility();
+		scrolltoview.elementscrollintoview(newcategorysavebutton);
 		return this;
 	}
 

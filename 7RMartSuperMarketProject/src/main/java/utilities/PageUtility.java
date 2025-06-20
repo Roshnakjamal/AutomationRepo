@@ -47,7 +47,7 @@ public class PageUtility {
 			radioButton.click();
 		}
 	}
-	public void elementscrollintoview(WebElement element) {
+	public void elementscrollintoview(WebDriver driver, WebElement element) {
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	js.executeScript("arguments[0].scrollIntoView()", element);
 	js.executeScript("arguments[0].click()", element);

@@ -80,10 +80,8 @@ public class ManageCategoryPage {
 
 	
 		PageUtility scrolltoview = new PageUtility();
-		scrolltoview.elementscrollintoview(showontopmenuradiobutton);
-		
-		showonleftmenuradiobutton.click();
-		
+		scrolltoview.elementscrollintoview(driver,showontopmenuradiobutton);
+		scrolltoview.elementscrollintoview(driver,showonleftmenuradiobutton);
 		return this;
 
 	}
@@ -91,7 +89,7 @@ public class ManageCategoryPage {
 	public ManageCategoryPage clickonTheNewCategorySaveButton() {
 
 		PageUtility scrolltoview = new PageUtility();
-		scrolltoview.elementscrollintoview(newcategorysavebutton);
+		scrolltoview.elementscrollintoview(driver,newcategorysavebutton);
 		return this;
 	}
 

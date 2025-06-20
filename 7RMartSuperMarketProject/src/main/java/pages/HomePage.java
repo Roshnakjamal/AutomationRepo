@@ -47,7 +47,7 @@ public class HomePage {
 
 	public ManageNewsPage clickOnManageNewsLink() {
 		PageUtility scrolltoview = new PageUtility();
-		scrolltoview.elementscrollintoview(manageNewslink);
+		scrolltoview.elementscrollintoview(driver, manageNewslink);
 		return new ManageNewsPage(driver);
 	}
 

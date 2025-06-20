@@ -114,6 +114,10 @@ public class ManageCategoryPage {
 	}
 
 	public boolean categorysearchpagetitledisplayed() {
+		
+		WaitUtility wait = new WaitUtility();
+		wait.waitUntilElementToBeClickable(driver, categorysearchpagetitle);
+		
 		return categorysearchpagetitle.isDisplayed();
 	}
 

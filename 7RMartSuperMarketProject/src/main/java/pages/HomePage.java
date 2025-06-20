@@ -1,5 +1,6 @@
 package pages;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -44,9 +45,10 @@ public class HomePage {
 	}
 
 	public ManageNewsPage clickOnManageNewsLink() {
-		WaitUtility wait = new WaitUtility();
-		wait.waitUntilElementToBeClickable(driver, manageNewslink);
-		manageNewslink.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView()", manageNewslink);
+		js.executeScript("arguments[0].click()", manageNewslink);
+		
 		return new ManageNewsPage(driver);
 	}
 
